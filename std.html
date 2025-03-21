@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+
+        <!-- Student Information -->
+        <section>
+            <h2>Student Information</h2>
+            <div class="student-info">
+                <p><strong>Student ID:</strong> S001</p>
+                <p><strong>Name:</strong>neha</p>
+                <p><strong>Email:</strong> neha@example.com</p>
+                <p><strong>Course:</strong> DevOps</p>
+                <p><strong>Year:</strong> 3rd Year</p>
+            </div>
+        </section>
+
+        <!-- Attendance Section -->
+        <section>
+            <h2>Attendance Overview</h2>
+            <div id="attendance-status">
+                <p><strong>Attendance for March:</strong></p>
+                <ul>
+                    <li>Date: 2025-03-01 - Status: Present</li>
+                    <li>Date: 2025-03-02 - Status: Absent</li>
+                    <li>Date: 2025-03-03 - Status: Present</li>
+                    <li>Date: 2025-03-04 - Status: Present</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Button to View Detailed Attendance Report -->
+        <section>
+            <a href="attendance-report.html" class="view-report">View Full Attendance Report</a>
+        </section>
+
+        <!-- Navigation Links -->
+        <div class="navigation">
+            <a href="ind.html">Back to Dashboard</a>
+            <button class="logout-button" onclick="window.location.href='ind.html'">Logout</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Attendance Management</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Faculty Dashboard</h1>
+
+        <!-- Select Date for Attendance -->
+        <section>
+            <h2>Select Date to Mark Attendance</h2>
+            <input type="date" id="attendanceDate" value="2025-03-21">
+        </section>
+
+        <!-- List of Students to Mark Attendance -->
+        <section>
+            <h2>Mark Attendance</h2>
+            <form id="attendanceForm">
+                <div class="student-list">
+                    <div class="student">
+                        <label>
+                            <input type="checkbox" name="student1" id="student1">22B91A6125
+                        </label>
+                    </div>
+                    <div class="student">
+                        <label>
+                            <input type="checkbox" name="student2" id="student2"> 22B91A6130
+                        </label>
+                    </div>
+                    <div class="student">
+                        <label>
+                            <input type="checkbox" name="student3" id="student3"> 22B91A6155
+                        </label>
+                    </div>
+                    <div class="student">
+                        <label>
+                            <input type="checkbox" name="student4" id="student4"> 22B91A6156
+                        </label>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Mark Attendance</button>
+            </form>
+        </section>
+
+        <!-- Logout Button -->
+        <section>
+            <button class="logout-button" onclick="window.location.href='login.html'">Logout</button>
+        </section>
+    </div>
+
+    <script>
+        // Handle Attendance Form Submission
+        document.getElementById("attendanceForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get the selected date
+            const selectedDate = document.getElementById("attendanceDate").value;
+            const attendanceData = [];
+
+            // Collect attendance information
+            const students = document.querySelectorAll(".student input[type='checkbox']");
+            students.forEach((student) => {
+                const studentName = student.id;
+                const attendanceStatus = student.checked ? "Present" : "Absent";
+                attendanceData.push({ studentName, attendanceStatus });
+            });
+
+            // Log the attendance (you can send this data to your backend)
+            console.log(`Attendance for ${selectedDate}:`);
+            attendanceData.forEach((data) => {
+                console.log(`${data.studentName}: ${data.attendanceStatus}`);
+            });
+
+            // You can also show an alert to confirm
+            alert(`Attendance for ${selectedDate} has been marked successfully!`);
+        });
+    </script>
+</body>
+
+</html>
