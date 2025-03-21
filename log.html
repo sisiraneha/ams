@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Attendance Management System</title>
+    <style>
+        /* Styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Login Container */
+        .login-container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h1>Login</h1>
+
+        <!-- Login Form -->
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <div class="form-group">
+                <label for="username">Username:123@gmail.com</label>
+                <input type="text" id="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:123</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Error message -->
+        <p id="error-message" class="error-message"></p>
+    </div>
+
+    <script>
+        // Function to validate login credentials
+        function validateLogin(event) {
+            event.preventDefault();
+
+            // Dummy credentials for validation
+            const validUsername = '123@gmail.com'; // Replace with actual username
+            const validPassword = '123'; // Replace with actual password
+
+            // Get user input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Check if the input values match the valid credentials
+            if (username === validUsername && password === validPassword) {
+                // Redirect to the dashboard or another page
+                window.location.href = "std.html"; // Replace with the correct dashboard URL
+            } else {
+                // Display an error message if the credentials are incorrect
+                document.getElementById('error-message').innerText = 'Invalid Username or Password!';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
